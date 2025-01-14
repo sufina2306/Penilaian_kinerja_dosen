@@ -35,11 +35,11 @@
                 </a>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
+                <a class="sidebar-link" href="{{ route('pages.dosen.arsipdokumen')}}" aria-expanded="false">
                   <span>
                     <iconify-icon icon="solar:danger-circle-bold-duotone" class="fs-6"></iconify-icon>
                   </span>
-                  <span class="hide-menu">Alerts</span>
+                  <span class="hide-menu">Arsip Dokumen</span>
                 </a>
               </li>
               <li class="sidebar-item">
