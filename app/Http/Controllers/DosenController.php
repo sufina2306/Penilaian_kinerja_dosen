@@ -17,6 +17,10 @@ class DosenController extends Controller
     {
         return view('pages.dosen.arsipdokumen'); // Ganti dengan tampilan yang sesuai
     }
+    public function realisasi()
+    {
+        return view('pages.dosen.realisasi'); // Ganti dengan tampilan yang sesuai
+    }
     public function skp(Request $request)
     {
         $periods = Periode::all(); // Ambil semua periode
