@@ -12,7 +12,6 @@
             <ul id="sidebarnav">
               <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
-                <span class="hide-menu">Home</span>
               </li>
               <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ route('pages.admin.dashboard') }}" aria-expanded="false">
@@ -22,10 +21,7 @@
                   <span class="hide-menu">Dashboard</span>
                 </a>
               </li>
-              <li class="nav-small-cap">    
-                <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
-                <span class="hide-menu">Manajemen Pengguna</span>
-              </li>
+             
               <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ route('pages.admin.daftarDosen') }}" aria-expanded="false">
                   <span>
@@ -37,7 +33,7 @@
               <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ route('periode.create') }}" aria-expanded="false">
                   <span>
-                    <iconify-icon icon="solar:danger-circle-bold-duotone" class="fs-6"></iconify-icon>
+                  <i class="bi bi-calendar-fill"></i>
                   </span>
                   <span class="hide-menu">Tambah Periode</span>
                 </a>
@@ -49,26 +45,6 @@
                   </span>
                   <span class="hide-menu">Arsip Dokumen</span>
                 </a>
-              </li>
-              <li class="sidebar-item">
-                <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
-                  <span>
-                    <iconify-icon icon="solar:file-text-bold-duotone" class="fs-6"></iconify-icon>
-                  </span>
-                  <span class="hide-menu">Forms</span>
-                </a>
-              </li>
-              <li class="sidebar-item">
-                <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
-                  <span>
-                    <iconify-icon icon="solar:text-field-focus-bold-duotone" class="fs-6"></iconify-icon>
-                  </span>
-                  <span class="hide-menu">Typography</span>
-                </a>
-              </li>
-              <li class="nav-small-cap">
-                <iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-6" class="fs-6"></iconify-icon>
-                <span class="hide-menu">SISTEM</span>
               </li>
               <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ route('logout') }}" aria-expanded="false">

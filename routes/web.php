@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth', 'checklevel:dosen']], function () {
     Route::get('/pages/dosen/dashboard', [DosenController::class, 'dashboard'])->name('pages.dosen.dashboard');
     
     Route::get('/pages/dosen/arsipdokumen', [DosenController::class, 'arsip'])->name('pages.dosen.arsipdokumen');
+    Route::get('/pages/dosen/realisasi', [DosenController::class, 'realisasi'])->name('pages.dosen.realisasi');
 
     Route::get('/pages/dosen/skp', [DosenController::class, 'skp'])->name('pages.dosen.skp');
     Route::get('/pages/dosen/profil', [DosenController::class, 'profil'])->name('pages.dosen.profil');
