@@ -23,21 +23,44 @@
               </li>
               
               <li class="sidebar-item">
-                <a class="sidebar-link" href="{{ route('pages.dosen.skp') }}" aria-expanded="false">
+                <a class="sidebar-link has-arrow dropdown-toggle" href="javascript:void(0)" aria-expanded="false">
                   <span>
                     <iconify-icon icon="solar:file-text-bold-duotone" class="fs-6"></iconify-icon>
                   </span>
-                  <span class="hide-menu">Rencana SKP</span>
-                </a>
-              </li>
-              <li class="sidebar-item">
-                <a class="sidebar-link" href="{{ route('pages.dosen.realisasi') }}" aria-expanded="false">
-                  <span>
-                    <iconify-icon icon="solar:file-text-bold-duotone" class="fs-6"></iconify-icon>
+                  <span class="hide-menu">SKP</span>
+                  <span class="ms-auto m-1">
+                  
                   </span>
-                  <span class="hide-menu">Realisasi SKP</span>
                 </a>
+                <ul aria-expanded="false" class="collapse first-level" style="padding-left: 20px;">
+                  <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ route('pages.dosen.skp') }}" aria-expanded="false">
+                      <span>
+                        <iconify-icon icon="solar:file-text-bold-duotone" class="fs-6"></iconify-icon>
+                      </span>
+                      <span class="hide-menu">Daftar SKP</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ route('pages.dosen.rencana', $periode->id) }}" aria-expanded="false">
+                      <span>
+                        <iconify-icon icon="solar:file-text-bold-duotone" class="fs-6"></iconify-icon>
+                      </span>
+                      <span class="hide-menu">Rencana SKP</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ route('pages.dosen.realisasi') }}" aria-expanded="false">
+                      <span>
+                        <iconify-icon icon="solar:file-text-bold-duotone" class="fs-6"></iconify-icon>
+                      </span>
+                      <span class="hide-menu">Realisasi SKP</span>
+                    </a>
+                  </li>
+                </ul>
               </li>
+
+
               <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ route('pages.dosen.arsipdokumen')}}" aria-expanded="false">
                 <span>

@@ -7,7 +7,6 @@
 
         <h1>Daftar SKP</h1>
         <h5>Daftar Sasaran Kinerja Pegawai</h5>
-
     
 
         <div class="dropdown m-3">
@@ -36,7 +35,7 @@
                             <div class="card-body">
                                 <p class="card-title">Tahun {{ \Carbon\Carbon::parse($period->tanggal_mulai)->format('Y') }}</p>
                                 <p class="">{{ \Carbon\Carbon::parse($period->tanggal_mulai)->translatedFormat('d F Y') }} - {{ \Carbon\Carbon::parse($period->tanggal_selesai)->translatedFormat('d F Y') }}</p>
-                                <a href="" class="btn btn-primary m-2">Rencana SKP  </a>
+                                <a href="{{ route('pages.dosen.rencana', $period->id) }}" class="btn btn-primary m-2">Rencana SKP</a>
                                 <a href="" class="btn btn-primary m-2">Realisasi</a>
                                 <a href="" class="btn btn-primary m-2">Dokumen SKP</a>
 

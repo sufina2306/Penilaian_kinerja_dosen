@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('rencanautamas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id'); // Foreign key to associate with dosen
-            $table->string('akuntable'); // Score for Accountability
-            $table->string('kompeten'); // Score for Competence
-            $table->string('harmonis'); // Score for Harmony
-            $table->string('loyal'); // Score for Loyalty
-            $table->string('adaptif'); // Score for Adaptability
-            $table->string('kolaboratif'); // Score for Collaboration
+            $table->unsignedBigInteger('user_id');
+            $table->string('pengajaran')->nullable(); // Menjadikan kolom pengajaran nullable
+            $table->string('penelitian')->nullable(); // Menjadikan kolom penelitian nullable
+            $table->string('pengabdian')->nullable(); // Menjadikan kolom pengabdian nullable
+            $table->string('rps')->nullable(); // Menjadikan kolom rps nullable
+            $table->string('bimbingan_skripsi')->nullable(); // Menjadikan kolom bimbingan_skripsi nullable
+            $table->string('bimbingan_kp')->nullable(); // Menjadikan kolom bimbingan_kp nullable
+            $table->string('bimbingan_dosen_wali')->nullable(); // Menjadikan kolom bimbingan_dosen_wali nullable
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

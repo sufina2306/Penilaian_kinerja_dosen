@@ -15,12 +15,16 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('rencanprilaku_id');
             $table->unsignedBigInteger('rencanautama_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('periode_id');
             $table->string('status'); 
             $table->string('tanggal_pengajuan'); 
             $table->timestamps();
 
             $table->foreign('rencanprilaku_id')->references('id')->on('rencanprilakus')->onDelete('cascade');
             $table->foreign('rencanautama_id')->references('id')->on('rencanautamas')->onDelete('cascade');
+            $table->foreign('periode_id')->references('id')->on('periodes')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

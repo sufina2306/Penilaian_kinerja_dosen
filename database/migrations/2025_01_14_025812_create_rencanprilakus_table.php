@@ -14,13 +14,15 @@ return new class extends Migration
         Schema::create('rencanprilakus', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('pelayanan');
-            $table->string('akuntable');
-            $table->string('kompeten');
-            $table->string('harmonis');
-            $table->string('loyal');
-            $table->string('adaptif');
-            $table->string('kolaboratif');
+            $table->string('pelayanan')->nullable();
+            $table->string('akuntable')->nullable();
+            $table->string('kompeten')->nullable();
+            $table->string('harmonis')->nullable();
+            $table->string('loyal')->nullable();
+            $table->string('adaptif')->nullable();
+            $table->string('kolaboratif')->nullable();
+
+            
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Profil;
 use App\Models\Periode;
+use App\Models\RencanaUtama;
+use App\Models\RencanPrilaku;
+use App\Models\PengajuanRencana;
 
 class DosenController extends Controller
 {
@@ -21,6 +24,16 @@ class DosenController extends Controller
     {
         return view('pages.dosen.realisasi'); // Ganti dengan tampilan yang sesuai
     }
+
+    public function rencana($periodeId)
+    {
+        $rencana = RencanaUtama::where('user_id', auth()->id())->first();
+        $rencanaPrilaku = RencanPrilaku::where('user_id', auth()->id())->first(); 
+        $periode = Periode::find($periodeId); // Mengambil periode berdasarkan ID
+
+        return view('pages.dosen.rencana', compact('rencana', 'rencanaPrilaku', 'periode'));
+    }
+
     public function skp(Request $request)
     {
         $periods = Periode::all(); // Ambil semua periode
@@ -73,5 +86,31 @@ class DosenController extends Controller
         $profil->save();
 
         return redirect()->route('pages.dosen.profil')->with('success', 'Profil berhasil diperbarui.');
+    }
+
+    public function ajukan(Request $request)
+    {
+        $request->validate([
+            'rencana_prilaku_id' => 'required|exists:rencanprilakus,id',
+            'rencana_utama_id' => 'required|exists:rencanautamas,id',
+        ]);
+
+        PengajuanRencana::create([
+            'rencanprilaku_id' => $request->rencana_prilaku_id,
+            'rencanautama_id' => $request->rencana_utama_id,
+            'user_id' => auth()->id(),
+            'status' => 'pending',
+            'tanggal_pengajuan' => now(),
+        ]);
+        
+        return redirect()->back()->with('success', 'Pengajuan berhasil dibuat.');
+    }
+
+    public function batalkan($id)
+    {
+        $pengajuan = PengajuanRencana::findOrFail($id);
+        $pengajuan->delete(); // Menghapus pengajuan
+
+        return redirect()->back()->with('success', 'Pengajuan berhasil dibatalkan.');
     }
 } 

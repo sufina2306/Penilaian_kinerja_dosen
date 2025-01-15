@@ -14,13 +14,14 @@ return new class extends Migration
         Schema::create('kinerjautamas', function (Blueprint $table) {
             $table->id();  
             $table->unsignedBigInteger('user_id'); // Foreign key to associate with dosen
-            $table->string('akuntable'); // Score for Accountability
-            $table->string('kompeten'); // Score for Competence
-            $table->string('harmonis'); // Score for Harmony
-            $table->string('loyal'); // Score for Loyalty
-            $table->string('adaptif'); // Score for Adaptability
-            $table->string('kolaboratif'); // Score for Collaboration
-            $table->timestamps();
+            $table->string('pengajaran')->nullable(); // Pengajaran
+            $table->string('penelitian')->nullable(); // Penelitian
+            $table->string('pengabdian')->nullable(); // Pengabdian
+            $table->string('rps')->nullable(); // RPS
+            $table->string('bimbingan_skripsi')->nullable(); // Bimbingan Skripsi
+            $table->string('bimbingan_kp')->nullable(); // Bimbingan KP
+            $table->string('bimbingan_dosen_wali')->nullable(); // Bimbingan Dosen Wali
+            $table->timestamps(); 
     
             // Foreign key constraint
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

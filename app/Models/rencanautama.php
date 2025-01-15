@@ -13,12 +13,13 @@ class RencanaUtama extends Model
 
     protected $fillable = [
         'user_id',
-        'akuntable',
-        'kompeten',
-        'harmonis',
-        'loyal',
-        'adaptif',
-        'kolaboratif',
+        'pengajaran',
+        'penelitian',
+        'pengabdian',
+        'rps',
+        'bimbingan_skripsi',
+        'bimbingan_kp',
+        'bimbingan_dosen_wali',
     ];
 
     // Relasi dengan model User
